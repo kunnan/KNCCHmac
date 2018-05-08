@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "KNCCHmacTool.h"
 
 @interface ViewController ()
 
@@ -16,14 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+//    ;
+    NSLog(@"%@",[KNCCHmacTool hmacsha1:@"kn" key:@"kn"]);//musksf4d0ewfocjWO3X2nr5w9uA=
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 @end

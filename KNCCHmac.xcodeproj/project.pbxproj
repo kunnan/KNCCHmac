@@ -13,6 +13,10 @@
 		E1C2F7F420A13223007CE961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C2F7F320A13223007CE961 /* Assets.xcassets */; };
 		E1C2F7F720A13223007CE961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C2F7F520A13223007CE961 /* LaunchScreen.storyboard */; };
 		E1C2F7FA20A13223007CE961 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C2F7F920A13223007CE961 /* main.m */; };
+		E1C2F80220A13262007CE961 /* KNCCHmacTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C2F80120A13262007CE961 /* KNCCHmacTool.m */; };
+		E1C2F80A20A1381A007CE961 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = E1C2F80420A1381A007CE961 /* hmac.c */; };
+		E1C2F80B20A1381A007CE961 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = E1C2F80620A1381A007CE961 /* sha1.c */; };
+		E1C2F80C20A1381A007CE961 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = E1C2F80820A1381A007CE961 /* Base64Transcoder.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		E1C2F7F620A13223007CE961 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1C2F7F820A13223007CE961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1C2F7F920A13223007CE961 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E1C2F80020A13262007CE961 /* KNCCHmacTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNCCHmacTool.h; sourceTree = "<group>"; };
+		E1C2F80120A13262007CE961 /* KNCCHmacTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KNCCHmacTool.m; sourceTree = "<group>"; };
+		E1C2F80420A1381A007CE961 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		E1C2F80520A1381A007CE961 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		E1C2F80620A1381A007CE961 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		E1C2F80720A1381A007CE961 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		E1C2F80820A1381A007CE961 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		E1C2F80920A1381A007CE961 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +70,13 @@
 		E1C2F7E920A13223007CE961 /* KNCCHmac */ = {
 			isa = PBXGroup;
 			children = (
+				E1C2F80320A1381A007CE961 /* Crypto */,
 				E1C2F7EA20A13223007CE961 /* AppDelegate.h */,
 				E1C2F7EB20A13223007CE961 /* AppDelegate.m */,
 				E1C2F7ED20A13223007CE961 /* ViewController.h */,
 				E1C2F7EE20A13223007CE961 /* ViewController.m */,
+				E1C2F80020A13262007CE961 /* KNCCHmacTool.h */,
+				E1C2F80120A13262007CE961 /* KNCCHmacTool.m */,
 				E1C2F7F020A13223007CE961 /* Main.storyboard */,
 				E1C2F7F320A13223007CE961 /* Assets.xcassets */,
 				E1C2F7F520A13223007CE961 /* LaunchScreen.storyboard */,
@@ -69,6 +84,19 @@
 				E1C2F7F920A13223007CE961 /* main.m */,
 			);
 			path = KNCCHmac;
+			sourceTree = "<group>";
+		};
+		E1C2F80320A1381A007CE961 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				E1C2F80420A1381A007CE961 /* hmac.c */,
+				E1C2F80520A1381A007CE961 /* Base64Transcoder.h */,
+				E1C2F80620A1381A007CE961 /* sha1.c */,
+				E1C2F80720A1381A007CE961 /* hmac.h */,
+				E1C2F80820A1381A007CE961 /* Base64Transcoder.c */,
+				E1C2F80920A1381A007CE961 /* sha1.h */,
+			);
+			path = Crypto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +170,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C2F80C20A1381A007CE961 /* Base64Transcoder.c in Sources */,
+				E1C2F80B20A1381A007CE961 /* sha1.c in Sources */,
+				E1C2F80A20A1381A007CE961 /* hmac.c in Sources */,
 				E1C2F7EF20A13223007CE961 /* ViewController.m in Sources */,
 				E1C2F7FA20A13223007CE961 /* main.m in Sources */,
 				E1C2F7EC20A13223007CE961 /* AppDelegate.m in Sources */,
+				E1C2F80220A13262007CE961 /* KNCCHmacTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
